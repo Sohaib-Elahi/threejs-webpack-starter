@@ -6,6 +6,50 @@
     <title>ThreeJS Starter</title>
 </head>
 <body>
+    <div class="container">
+        <h1 class="top">BrandLiners</h1>
+        <h1 class="bottom">BrandLiners</h1>
+        <!-- <div class="ptag">
+            <p>simplicity</p>
+            <p>*</p>
+            <p>precision</p>
+            <p>*</p>
+            <p>solidarity</p>
+        </div> -->
+    </div>
+    
     <canvas class="webgl"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/CSSRulePlugin.min.js" integrity="sha512-oYnRsy+bFXYr+btXcKk2dpzfERnCUc5G4GkJ0AO/XSvomLV7Xc7tZVhTsYIz9QzOAw9qo/6qoA6JTpzaYuHUGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <section></section>
+
+    <script>
+        
+        const h1 = document.querySelector('h1')
+        const t1 = gsap.timeline({repeat: -1,repeatDelay: 2})
+        const t2 = gsap.timeline()
+        t2.to(h1, {duration: 5, clipPath: 'polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 0)'})
+      
+
+        t1.to(h1, {duration: 3})
+        
+        t1.to(h1, 0.1, {skewX:30,ease: Power4.easeInOut})
+        t1.to(h1, 0.08, {skewX:0,ease: Power4.easeInOut})
+        t1.to(h1, 0.08, {opacity:0})
+        t1.to(h1, 0.08, {opacity:1})
+        t1.to(h1, 0.08, {x:-20})
+        t1.to(h1, 0.08, {x:0})
+        t1.to(h1, 0.08, {opacity:0})
+        t1.to(h1, 0.08, {opacity:1})
+        t1.to(h1, 0.08, {x:20})
+        t1.to(h1, 0.08, {x:0})
+        t1.add("split", 0)
+        t1.to(h1, 0.08, { className: '-=redShadow'}, "+=0.09")
+        t1.to(h1, 0.03,{ className: '+=greenShadow'},'split')
+        t1.to(h1, 0.03,{ className: '-=greenShadow'},"+=0.01")
+        
+    
+    </script>
 </body>
 </html>
